@@ -1,4 +1,6 @@
-//重組問題
+// 重組問題
+// https://zerojudge.tw/ShowProblem?problemid=q183
+
 #include<bits/stdc++.h>
 using namespace std;
 #define IO ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
