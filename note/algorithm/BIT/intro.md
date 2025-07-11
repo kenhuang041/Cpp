@@ -21,13 +21,11 @@
 問題來了，應該怎樣將指定數加到對應格?
 答案是用lowbit(n)
 lowbit(n) 是將n轉二進制，取由右邊往前數到的第一個1的值 <br>
-3_{(10)} -> 011_{(2)}, lowbit(3) = 1  <br>
-12(10) -> 1100_(2), lowbit(12) = 4 <br>
 
 $$
 \begin{aligned}
-3_{(10)} &\rightarrow 011_{(2)},\ \mathit{lowbit} = 1 \\
-6_{(10)} &\rightarrow 0110_{(2)},\ \mathit{lowbit} = 2
+3_{(10)} &\rightarrow 011_{(2)},\  \mathit{lowbit} = 1 \\
+12_{(10)} &\rightarrow 1100_{(2)},\ \mathit{lowbit} = 4
 \end{aligned}
 $$
 
