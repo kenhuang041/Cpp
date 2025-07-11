@@ -21,7 +21,6 @@
 問題來了，應該怎樣將指定數加到對應格?
 答案是用lowbit(n)
 lowbit(n) 是將n轉二進制，取由右邊往前數到的第一個1的值 <br>
-
 $$
 \begin{aligned}
 3_{(10)}  &\rightarrow  &011_{(2)},\  &\mathit{lowbit} = 1 \\
