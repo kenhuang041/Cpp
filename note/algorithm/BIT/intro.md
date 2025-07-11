@@ -58,11 +58,13 @@ void build(int n) {
 查詢區間和及修改的複雜度最優的BIT，該如何實現這些功能? <br>
 搜尋 1\~x 區間和的話，可以讓 x -= lowbit(n) 直到變成0，藉此經過所有需要的區間 <br>
 以1~7為例:
+
 $$
 \begin{aligned}
 7(000111)  &\rightarrow  6(000110) &\rightarrow  4(000100) &\rightarrow  0(000000)
 \end{aligned}
 $$
+
 可以上去看圖，是不是就經過所有節點了^^
 ``` cpp
 //搜尋 1~x 區間和
