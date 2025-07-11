@@ -80,3 +80,18 @@ int query(int l,int r) {
   return find(r) - find(l-1)l
 }
 ```
+修改的話，只要把包含被修改值的節點加上與舊值的差就好了
+假設把1改成3，是不是把包含1的節點加上 3-1=2 就好了
+``` cpp
+// 單點加值
+void add(int x,int k) {
+  a[x] += k
+  for(int i=x; i<2000005; i+=lowbit(i)) 
+    bt[i] += k;
+}
+
+// 利用單點加值實現的單點修改
+void modify(int x,int k) {
+  add(x,k-a[x])
+}
+```
