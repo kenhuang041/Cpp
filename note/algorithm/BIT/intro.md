@@ -36,10 +36,20 @@ int lowbit(int x) {return x & -x;}
 lowbit(3)
 3 -> 011
 -3 -> 101
-(二進制補數要+!)
+( 二進制負數 = 補數+1 )
 
 011 & 101 = 001
 => 1
 */
 ```
 
+回到問題，要怎樣使用 lowbit(n) 才能達到理想的效果?
+答案是通靈(?
+反正就是讓 x 一直 += lowbit(x)，藉此經過每個須存放x的節點
+``` cpp
+void build(int n) {
+  for (int i = 1; i <= n; i++)  //遍歷需存放的項目: 1~n
+    for (int x = i; x < 200005; x += lowbit(x)) //遍歷需存放的節點
+        bt[x] += a[i]; //存入BIT
+}
+```
