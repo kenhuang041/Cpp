@@ -25,7 +25,7 @@ lowbit(n) 是將n轉二進制，取由右邊往前數到的第一個1的值 <br>
 12(10) -> 1100_(2), lowbit(12) = 4 <br>
 
 $$
-3_{(10)} \rightarrow 011_{(2)},\ \mathit{lowbit} = 1 \\
+3_{(10)} \rightarrow 011_{(2)},\ \mathit{lowbit} = 1 \newLine
 6_{(10)} \rightarrow 0110_{(2)},\ \mathit{lowbit} = 2
 $$
 
