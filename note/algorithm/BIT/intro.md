@@ -30,7 +30,7 @@ $$
 $$
 
 程式碼<br>
-``` c++=
+``` cpp
 int lowbit(int x) {return x & -x;}
 /*
 lowbit(3)
