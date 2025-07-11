@@ -28,5 +28,3 @@ $$
 12_{(10)} &\rightarrow 1100_{(2)},\ \mathit{lowbit} = 4
 \end{aligned}
 $$
-
-
