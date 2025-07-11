@@ -43,13 +43,38 @@ lowbit(3)
 */
 ```
 
-回到問題，要怎樣使用 lowbit(n) 才能達到理想的效果?
-答案是通靈(?
+回到問題，要怎樣使用 lowbit(n) 才能達到理想的效果? <br>
+答案是通靈(? <br>
 反正就是讓 x 一直 += lowbit(x)，藉此經過每個須存放x的節點
 ``` cpp
 void build(int n) {
   for (int i = 1; i <= n; i++)  //遍歷需存放的項目: 1~n
     for (int x = i; x < 200005; x += lowbit(x)) //遍歷需存放的節點
         bt[x] += a[i]; //存入BIT
+}
+```
+
+### 功能
+查詢區間和及修改的複雜度最優的BIT，該如何實現這些功能? <br>
+搜尋1~x區間和的話，可以讓 x -= lowbit(n) 直到變成0，藉此經過所有需要的區間 <br>
+以1~7為例:
+$$
+\begin{aligned}
+7(000111)  &\rightarrow  6(000110) &\rightarrow  4(000100) &\rightarrow  0(000000)
+\end{aligned}
+$$
+可以上去看圖，是不是就經過所有節點了^^
+``` cpp
+//搜尋 1~x 區間和
+int find(int x) {
+  int sum=0;
+  for(int i=x; i>0; i-=lowbit(i))
+    sum+=bt[i];
+  return sum;
+}
+
+//計算 l~r 的區間和 (包含l及r 所以要l-1)
+int query(int l,int r) {
+  return find(r) - find(l-1)l
 }
 ```
