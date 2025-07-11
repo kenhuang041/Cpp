@@ -29,8 +29,8 @@ $$
 \end{aligned}
 $$
 
-程式碼
-'''
+程式碼<br>
+``` C++=
 int lowbit(int x) {return x & -x;}
-'''
+```
 
