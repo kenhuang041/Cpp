@@ -3,7 +3,7 @@
 複雜度跟BIT一樣，都是O(log n) <br>
 但更直觀一點? (我是這麼覺得^^) <br>
 
-<結構>
+### 結構
 線段樹是一個完整二元樹，假設是一個長度為9的線段樹，則其二元樹如圖
 ()
 
@@ -26,9 +26,30 @@ void build(int l, int r,int node) {
         return;
     }
 
-    int mid = (l + r) / 2;                            // 當前節點分兩半
+    int mid = (l + r) / 2;                            // 切分
     build(node * 2, l, mid);                          // 左子樹 → node*2
     build(node * 2 + 1, mid + 1, r);                  // 右子樹 → node*2+1
     tree[node] = tree[node * 2] + tree[node * 2 + 1]; // 設定當前節點值為兩子節點總和
 }
 ```
+
+### 功能
+查詢區間和方法如下
+- 從根結點開始向下找，若當前節點 `l > find_l, find_r < r`，則代表此節點被包含在查詢區間內
+- 直到找到區間內只有一個數字的葉節點，即可得知查詢區間和
+- 如果節點在範圍外，可以直接終止遞迴
+
+```cpp
+// 計算 a[l] ~ a[r] 的總和
+int query(int node, int l, int r, int ql, int qr) {
+    if (qr < l || r < ql) return 0;             // 節點在範圍外
+    if (ql <= l && r <= qr) return tree[node];  // 完全包含，回傳節點值
+
+    int mid = (l + r) / 2;                          // 切分
+    return query(node * 2, l, mid, ql, qr) +        // 左子樹
+           query(node * 2 + 1, mid + 1, r, ql, qr); // 右子樹
+}
+
+```
+
+
