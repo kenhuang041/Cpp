@@ -16,7 +16,8 @@ LIS+1代表較小項目加上當前項目的LIS
 
 #### 圖解:
 
-![chrome_cTfE113C1a](https://hackmd.io/_uploads/r1O72xS1lg.png)
+<img width="721" height="47" alt="image" src="https://github.com/user-attachments/assets/556f9f87-0063-4180-ae0e-2d097b2b7527" />
+
 
 `arr[i] < arr[j]`，不符合遞增子序列。 (紅色對應 `i` ,藍色對應 `j` )
 
