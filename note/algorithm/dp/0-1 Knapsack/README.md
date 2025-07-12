@@ -38,7 +38,7 @@
 ![1714041499672](https://hackmd.io/_uploads/B1zlGiJGC.jpg)
 
 ### <font color=#1936C9><br>程式碼</font>
-``` cpp=
+``` cpp
 #include<bits/stdc++.h>
 using namespace std;
 
