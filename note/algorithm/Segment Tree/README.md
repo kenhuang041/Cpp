@@ -35,7 +35,7 @@ void build(int l, int r,int node) {
 
 ### 功能
 查詢區間和方法如下
-- 從根結點開始向下找，若當前節點 `l > find_l, find_r < r`，則代表此節點被包含在查詢區間內
+- 從根節點開始向下找，若當前節點 `l > find_l, find_r < r`，則代表此節點被包含在查詢區間內
 - 直到找到區間內只有一個數字的葉節點，即可得知查詢區間和
 - 如果節點在範圍外，可以直接終止遞迴
 
@@ -48,6 +48,25 @@ int query(int node, int l, int r, int ql, int qr) {
     int mid = (l + r) / 2;                          // 切分
     return query(node * 2, l, mid, ql, qr) +        // 左子樹
            query(node * 2 + 1, mid + 1, r, ql, qr); // 右子樹
+}
+```
+修改單點也是差不多的方式，從根節點向下找到需更改的葉節點，再透過遞迴的收束更改被影響的節點就好了
+```cpp
+// 單點修改 a[pos] = val;
+void modify(int node, int l, int r, int pos, int val) {
+    if (l == r) { //修改葉節點
+        tree[node] = val;
+        return;
+    }
+
+    //二分搜尋
+    int mid = (l + r) / 2;
+    if (pos <= mid)
+        modify(node * 2, l, mid, pos, val);
+    else
+        modify(node * 2 + 1, mid + 1, r, pos, val);
+
+    tree[node] = tree[node * 2] + tree[node * 2 + 1]; //更改被影響節點
 }
 
 ```
