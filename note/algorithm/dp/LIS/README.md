@@ -17,17 +17,17 @@ LIS+1代表較小項目加上當前項目的LIS
 #### 圖解:
 
 
-|![image](https://hackmd.io/_uploads/r1O72xS1lg.png)|
+![image](https://hackmd.io/_uploads/r1O72xS1lg.png)
 
 `arr[i] < arr[j]`，不符合遞增子序列。 (紅色對應 `i` ,藍色對應 `j` )
 
 
-| ![image](https://hackmd.io/_uploads/SJSisxHJgx.png) |
+ ![image](https://hackmd.io/_uploads/SJSisxHJgx.png) 
 
 
 當前 `arr[i] < arr[j]`，則 `dp[3] = max(dp[3],dp[2]+1);`，`dp[3] = 2;`
 
-| ![image](https://hackmd.io/_uploads/H1OpjlSyxe.png) |
+ ![image](https://hackmd.io/_uploads/H1OpjlSyxe.png) 
 
 
 依序推論即可得出上圖內容，遍歷陣列並取出最大LIS即可
