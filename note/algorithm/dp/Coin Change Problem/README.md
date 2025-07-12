@@ -33,7 +33,7 @@
 <font color=#FFFFFF>道理懂了吧，接下來看看該如何用動態規劃實現吧 :D</font>
 
 ### <font color=#1936C9>程式碼</font>
-``` cpp=
+``` cpp
 #include<bits/stdc++.h>
 using namespace std;
 
