@@ -26,9 +26,9 @@ void build(int l, int r,int node) {
         return;
     }
 
-    int mid = (l + r) / 2; // 當前節點分兩半
-    build(node * 2, l, mid);        // 左子樹 → node*2
-    build(node * 2 + 1, mid + 1, r); // 右子樹 → node*2+1
+    int mid = (l + r) / 2;                            // 當前節點分兩半
+    build(node * 2, l, mid);                          // 左子樹 → node*2
+    build(node * 2 + 1, mid + 1, r);                  // 右子樹 → node*2+1
     tree[node] = tree[node * 2] + tree[node * 2 + 1]; // 設定當前節點值為兩子節點總和
 }
 ```
