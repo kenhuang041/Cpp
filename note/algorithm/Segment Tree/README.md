@@ -11,7 +11,8 @@
 
 $$
 \begin{aligned}
-- 左子節點 &\rightarrow = &2i+1 \\
+左子節點 &\rightarrow = &2i \\
+右子節點 &\rightarrow = &2i+1 \\
 \end{aligned}
 $$
 
