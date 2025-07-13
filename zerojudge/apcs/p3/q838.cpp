@@ -26,21 +26,21 @@ signed main() {
 	
     now = n;
     while(!pq.empty()) {
-		pii curr = pq.top();
-		pq.pop();
+        pii curr = pq.top();
+        pq.pop();
 			
-		if(curr.F > t) break;
-		if(curr.F != v[ID]) continue;
+        if(curr.F > t) break;
+        if(curr.F != v[ID]) continue;
 			
-		ans += v[ID];
-		v[nxt[ID]] += v[ID];
-		v[ID] = 0;
-		nxt[pre[ID]] = nxt[ID];
-		pre[nxt[ID]] = pre[ID];
+        ans += v[ID];
+        v[nxt[ID]] += v[ID];
+        v[ID] = 0;
+        nxt[pre[ID]] = nxt[ID];
+        pre[nxt[ID]] = pre[ID];
 			
-		if(nxt[ID] != n) pq.push({v[nxt[ID]],nxt[ID]});
-	}
+        if(nxt[ID] != n) pq.push({v[nxt[ID]],nxt[ID]});
+    }
 	
-	cout << ans;
-	return 0;
+    cout << ans;
+    return 0;
 }
