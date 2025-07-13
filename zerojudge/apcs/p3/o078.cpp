@@ -1,3 +1,4 @@
+// 2024/06 缺字問題
 #include<bits/stdc++.h> 
 using namespace std;
 #define IO ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
