@@ -6,7 +6,7 @@ using namespace std;
 #define OUT (a[y+moves[0][d]][x+moves[1][d]] == -1)
 
 signed main() {
-	IO;
+    IO;
     int m,n,k,r,c;
     cin >> m >> n >> k >> r >> c;
     int moves[2][4] = {{0,1,0,-1},{1,0,-1,0}};
@@ -15,15 +15,15 @@ signed main() {
     
     for(int i=1; i<=m; i++) {
     	for(int j=1; j<=n; j++) {
-    		cin >> a[i][j];
-		}
-	}
+    	    cin >> a[i][j];
+	    }
+    }
 	
 	int y=r+1,x=c+1,d=0; //0=右 1=下 2=左 3=上 
 	int score=0,ans=0;
 	while(a[y][x] != 0) {
 		score += a[y][x];
-		a[y][x]--;
+		a[y][x]--; 
 		ans++;
 		if(score%k == 0) d = (d+1)%4; 
 		
