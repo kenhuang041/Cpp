@@ -20,7 +20,7 @@ $$
 接下來就可以用程式碼實現了 
 ``` cpp
 // 建線段樹
-void build(int l, int r,int node) {
+void build(int node,int l, int r) {
     if (l == r) { // 葉節點 終止遞迴
         tree[node] = a[l];
         return;
