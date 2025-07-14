@@ -3,11 +3,8 @@
 
 ### 結構 & 原理
 假設樹現在找這樣 <br>
-     1  <br>
-    / \  <br>
-   2   3  <br>
-      / \  <br>
-     4   5  <br>
+<img width="532" height="487" alt="image" src="https://github.com/user-attachments/assets/a5517272-322c-4a3d-b45d-2a8b74ccfe1d" />
+
  
 
 開一個 dp[] 用來存當前節點向下走的最大路徑
