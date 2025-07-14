@@ -5,6 +5,9 @@
 - 在以節點u為根節點，dfs找到距離節點u最遠的節點v
 - 節點u及節點v的距離就會是樹的直徑了
 
+<br>
+
+### 程式碼
 ```cpp
 vector<int> tree[N];
 int mx = -1,mx_node;
