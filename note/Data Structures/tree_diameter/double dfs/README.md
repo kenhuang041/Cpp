@@ -6,5 +6,14 @@
 - 節點u及節點v的距離就會是樹的直徑了
 
 ```cpp
-
+void dfs(int u,int parent,int t) {
+    for(auto v : tree[u]) {
+	if(v == parent) continue;
+	dfs(v,u,t+1);
+    }	
+    if(t > mx) {
+	mx_node = u;
+	mx = t;
+    }
+}
 ```
