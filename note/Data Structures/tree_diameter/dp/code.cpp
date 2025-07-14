@@ -11,38 +11,38 @@ int dp[N];
 int ans=0;
 
 void dfs(int u,int parent) {
-	int max1 = 0,max2 = 0;
+    int max1 = 0,max2 = 0;
 	
-	for(auto v : tree[u]) {
-		if(v == parent) continue;
-		dfs(v,u);
+    for(auto v : tree[u]) {
+	if(v == parent) continue;
+	dfs(v,u);
 		
-		int d = dp[v]+1; //節點u到節點v的距離記得算 所以要+1 
-		if(d > max1) {
-			max2 = max1;
-			max1 = d;
-		} 
-		else if(d > max2) {
-			max2 = d;
-		}
+	int d = dp[v]+1; //節點u到節點v的距離記得算 所以要+1 
+	if(d > max1) {
+	    max2 = max1;
+	    max1 = d;
+	} 
+	else if(d > max2) {
+    	    max2 = d;
 	}
+    }
 	
-	dp[u] = max1;
-	ans = max(ans,max1+max2);
+    dp[u] = max1;
+    ans = max(ans,max1+max2);
 }
 
 signed main() {
-	IO;
-	int n;
-	cin >> n;
+    IO;
+    int n;
+    cin >> n;
+
+    for(int i=0,a,b; i<n-1; i++) {
+    	cin >> a >> b;
+	tree[a].push_back(b);
+	tree[b].push_back(a);
+    }
 	
-	for(int i=0,a,b; i<n-1; i++) {
-		cin >> a >> b;
-		tree[a].push_back(b);
-		tree[b].push_back(a);
-	}
-	
-	dfs(0,-1);
-	cout << ans;
-	return 0;
+    dfs(0,-1);
+    cout << ans;
+    return 0;
 } 
