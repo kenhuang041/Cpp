@@ -1,3 +1,5 @@
+// apcs 2016/03 血緣關係
+// 相比於兩次dfs的0.2s AC解，樹上dp的68ms AC解快超多
 #include<bits/stdc++.h>
 using namespace std;
 #define IO ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
