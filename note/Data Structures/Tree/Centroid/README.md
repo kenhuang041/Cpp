@@ -25,15 +25,15 @@ int cost[N];
 int nt;
 
 int dfs(int u,int parent) {
-	int t = 1,r = 0;
-	for(auto i : tree[u]) {
-		if(i == parent) continue;
-		r = dfs(i,u);
-		t += r;
-		cost[u] = max(cost[u],r);
-	}
+    int t = 1,r = 0;
+    for(auto i : tree[u]) {
+        if(i == parent) continue;
+	r = dfs(i,u);
+	t += r;
+	cost[u] = max(cost[u],r);
+    }
 	
-	cost[u] = max(cost[u],nt-t);
-	return t;
+    cost[u] = max(cost[u],nt-t);
+    return t;
 }
 ```
