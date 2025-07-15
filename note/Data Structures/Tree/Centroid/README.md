@@ -26,16 +26,29 @@ vector<int> tree[N];
 int cost[N];
 int nt;
 
+// 建立各節點滲度
 int dfs(int u,int parent) {
-    int t = 1,r = 0;
+    int t = 1,r = 0; // t 子樹大小,  r 子節點返回值
     for(auto i : tree[u]) {
         if(i == parent) continue;
-	r = dfs(i,u);
-	t += r;
-	cost[u] = max(cost[u],r);
+	r = dfs(i,u); // 單個子樹節點大小
+	t += r; // 累加
+	cost[u] = max(cost[u],r); // 更新最大子樹大小
     }
 	
-    cost[u] = max(cost[u],nt-t);
-    return t;
+    cost[u] = max(cost[u],nt-t); // 考慮上方部分（父節點方向）
+    return t; // 返回以now為根的子樹大小
 }
+```
+滲度建立完畢，就可以取重心了
+```cpp
+dfs(0,-1); 
+int mn = INT_MAX,ans = -1;
+for(int i=0; i<n; i++) { // 滲度最小的即是重心
+    if(cost[i] < mn) {
+    mn = cost[i];
+    ans = i;
+}
+
+cout << ans; // 重心
 ```
