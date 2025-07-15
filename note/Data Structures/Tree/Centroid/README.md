@@ -7,7 +7,7 @@
 其中子樹節點數量分別是 2 和 3 <br>
 則節點4的滲度應為較大的 3 <br>
 
-|-----|-----|
+
 | <img width="600" height="511" alt="image" src="https://github.com/user-attachments/assets/c5f3835f-3516-450f-9795-9c676327c940" /> |  <img width="615" height="357" alt="image" src="https://github.com/user-attachments/assets/533643cf-bf8b-4f52-9810-b45f6d9a5849" /> |
 |-----|-----|
 
