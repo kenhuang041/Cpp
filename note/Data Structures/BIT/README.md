@@ -81,7 +81,7 @@ int find(int x) {
 
 //計算 l~r 的區間和 (包含l及r 所以要l-1)
 int query(int l,int r) {
-  return find(r) - find(l-1)l
+  return find(r) - find(l-1);
 }
 ```
 修改的話，只要把包含被修改值的節點加上與舊值的差就好了
