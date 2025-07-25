@@ -49,4 +49,26 @@ void dfs(int u,int p) {
 **查找LCA**
 基本的架構完成後，就可以開始查找了，其中查找可分為
 - 兩個節點調整至相同高度
-- 同時向上移動，直到i = 0;
+- 同時向上移動，直到 i < 0;
+``` cpp
+int query(int u,int v) {
+    if(depth[u] < depth[v]) swap(u,v); // 默認 節點u 高度 >= 節點v
+    for(int i=LOG-1; i>=0; i--) { // 移動至相同高度
+	if(depth[u] - (1 << i) >= depth[v]) { // depth[u] - 2^i >=  depth[v]
+	    u = up[u][i]; //向上移動
+	}
+    }
+	
+    if(u == v) return u; // 相同高度時節點已相同 直接回傳
+	
+    for(int i=LOG-1; i>=0; i--) { // 向上移動
+	//向上跳 2^i 步會不會「越過」LCA？
+	if(up[u][i] != up[v][i]) { // 不會越過
+	    u = up[u][i]; // 向上移動
+	    v = up[v][i];
+	}
+    } 
+	
+    return up[u][0]; // 回傳結果
+}
+```
