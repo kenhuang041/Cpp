@@ -15,5 +15,10 @@
 > 以圖為例，dp[4][1] => 節點4的第2個祖先 => 節點0 <br>
 
 以此類推，我們可以得到節點u的第1,2,4...2^i個祖先 <br>
-那如果要找 節點u 的第3個祖先怎麼辦? <br>
-**答案是用二進制**
+實作時也可用 dp 的方式加快執行的速度 <br>
+狀態轉移式如下
+``` cpp
+up[u][i] = up[up[u][i-1]][i-1]
+```
+<img width="631" height="442" alt="image" src="https://github.com/user-attachments/assets/b8b45da2-6d2b-4885-91ec-e3699925b87f" />
+圖參考的是: [LCA](https://nthu-cp.github.io/NTHU-CPP/graph/lca.html)
