@@ -21,4 +21,5 @@
 up[u][i] = up[up[u][i-1]][i-1]
 ```
 <img width="631" height="442" alt="image" src="https://github.com/user-attachments/assets/b8b45da2-6d2b-4885-91ec-e3699925b87f" />
+
 圖源: https://nthu-cp.github.io/NTHU-CPP/graph/lca.html
