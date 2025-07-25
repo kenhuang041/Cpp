@@ -26,5 +26,27 @@ up[u][i] = up[up[u][i-1]][i-1]
 <br>
 接著用dfs遍歷樹，取得所有點的祖先 <br>
 ``` cpp
+vector<int> tree[N];
+int up[N][LOG];
+int depth[N];
 
+void dfs(int u,int p) {
+    up[u][0] = p;
+    for(int i=1; i<LOG; i++) {
+	up[u][i] = up[up[u][i-1]][i-1];
+    }	
+    for(auto v : tree[u]) {
+	if(v != p) {
+	    depth[v] = depth[u]+1;
+	    dfs(v,u);
+	}
+    }
+}
 ```
+
+<br>
+
+**查找LCA**
+基本的架構完成後，就可以開始查找了，其中查找可分為
+- 兩個節點調整至相同高度
+- 同時向上移動，直到i = 0;
