@@ -37,4 +37,28 @@ void dfs(int u) {
 <br>
 
 ---
+### bfs 實現展開樹
+也是很普通的bfs遍歷樹，只是多了個存放展開樹 ( ?
+``` cpp
+vector<int> tree[N],spanning_tree[N];
+int visited[N];
 
+void bfs() {
+    queue<int> q;
+    q.push(0);
+    visited[0] = 1;
+    while(q.size() > 0) {
+	int u = q.front();
+	q.pop();
+		
+	for(auto v : tree[u]) {
+	    if(!visited[v]) {
+		visited[v] = 1;
+		q.push(v);
+		spanning_tree[u].push_back(v);
+		spanning_tree[v].push_back(u);
+	    }
+	}
+    }
+}
+```
