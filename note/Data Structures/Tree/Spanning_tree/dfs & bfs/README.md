@@ -34,4 +34,7 @@ void dfs(int u) {
 做完可以得到下圖 <br>
 <img width="592" height="557" alt="image" src="https://github.com/user-attachments/assets/d088ba90-1249-4ffc-8510-47c280017413" />
 
+<br>
+
+---
 
