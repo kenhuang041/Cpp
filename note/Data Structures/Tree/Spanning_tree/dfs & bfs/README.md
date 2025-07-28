@@ -6,7 +6,7 @@
 - 沒有還路
 - 連結到所有節點
 
-假設原圖G如下
+假設原圖G如下<br>
 <img width="529" height="577" alt="image" src="https://github.com/user-attachments/assets/01d025a9-3d0d-4eb9-bb32-e18b6d05d1ad" />
 <br>
 若使用dfs實現展開數，可以得到下圖 <br>
