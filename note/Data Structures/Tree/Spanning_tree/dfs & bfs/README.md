@@ -18,13 +18,13 @@ vector<int> tree[N],spanning_tree[N];
 int visited[N];
 
 void dfs(int u) {
-	visited[u] = 1;
-	for(auto v : tree[u]) {
-		if(!visited[v]) {
-			spanning_tree[u].push_back(v);
-			spanning_tree[v].push_back(u);
-			dfs(v);
-		}
+    visited[u] = 1;
+    for(auto v : tree[u]) {
+	if(!visited[v]) {
+	    spanning_tree[u].push_back(v);
+	    spanning_tree[v].push_back(u);
+	    dfs(v);
 	}
+    }
 }
 ```
