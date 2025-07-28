@@ -62,3 +62,6 @@ void bfs() {
     }
 }
 ```
+做完可以得到下圖 <br>
+<img width="515" height="523" alt="image" src="https://github.com/user-attachments/assets/e721a8c6-9f83-4288-bf08-dde9f08eccfc" />
+
