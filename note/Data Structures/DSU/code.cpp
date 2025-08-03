@@ -6,14 +6,14 @@ using namespace std;
 int p[N];
 
 int find(int x) {
-	if(p[x] == x) return x;
-	return p[x] = find(p[x]); //路徑壓縮 + 遞迴 
+    if(p[x] == x) return x;
+    return p[x] = find(p[x]); //路徑壓縮 + 遞迴 
 }
 
 void Union(int x,int y) {
-	int g1 = find(x);
-	int g2 = find(y);
-	if(g1 != g2) p[g2] = g1; // 合併集合 
+    int g1 = find(x);
+    int g2 = find(y);
+    if(g1 != g2) p[g2] = g1; // 合併集合 
 }
 
 signed main() {
