@@ -46,8 +46,9 @@ dfs(0,-1);
 int mn = INT_MAX,ans = -1;
 for(int i=0; i<n; i++) { // 滲度最小的即是重心
     if(cost[i] < mn) {
-    mn = cost[i];
-    ans = i;
+        mn = cost[i];
+        ans = i;
+    }
 }
 
 cout << ans; // 重心
