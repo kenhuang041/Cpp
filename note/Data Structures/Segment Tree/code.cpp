@@ -8,36 +8,36 @@ using namespace std;
 int tree[4*N],a[N];
 
 void build(int node,int l,int r) {
-	if(l == r) {
-		tree[node] = a[l];
-		return;
-	}
+    if(l == r) {
+	tree[node] = a[l];
+	return;
+    }
 	
-	int mid = (l+r) / 2;
-	build(lc,l,mid);
-	build(rc,mid+1,r);
-	tree[node] = tree[lc] + tree[rc];
+    int mid = (l+r) / 2;
+    build(lc,l,mid);
+    build(rc,mid+1,r);
+    tree[node] = tree[lc] + tree[rc];
 }
 
 int query(int node,int l,int r,int ql,int qr) { //ql,qr為查詢區間，不需變化 
-	if(l > qr || r < ql) return 0;
-	if(l >= ql && r <= qr) return tree[node];
+    if(l > qr || r < ql) return 0;
+    if(l >= ql && r <= qr) return tree[node];
 	
-	int mid = (l+r) / 2;
-	return query(lc,l,mid,ql,qr) + 
-		   query(rc,mid+1,r,ql,qr);
+    int mid = (l+r) / 2;
+    return query(lc,l,mid,ql,qr) + 
+	   query(rc,mid+1,r,ql,qr);
 }
 
 void modify(int node,int l,int r,int pos,int val) {
-	if(l == r) {
-		tree[node] = val;
-		return;
-	}
+    if(l == r) {
+	tree[node] = val;
+	return;
+    }
 	
-	int mid = (l+r) / 2;
-	if(pos <= mid) modify(lc,l,mid,pos,val);
-	else modify(rc,mid+1,r,pos,val);
-	tree[node] = tree[lc] + tree[rc];
+    int mid = (l+r) / 2;
+    if(pos <= mid) modify(lc,l,mid,pos,val);
+    else modify(rc,mid+1,r,pos,val);
+    tree[node] = tree[lc] + tree[rc];
 }
 
 signed main() {
