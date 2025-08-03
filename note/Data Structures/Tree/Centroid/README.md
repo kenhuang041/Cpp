@@ -44,13 +44,13 @@ int dfs(int u,int parent) {
 滲度建立完畢，就可以取重心了
 ```cpp
 dfs(0,-1); 
-int mn = INT_MAX,ans = -1;
+int mn = INT_MAX,pos = -1;
 for(int i=0; i<n; i++) { // 滲度最小的即是重心
     if(cost[i] < mn) {
         mn = cost[i];
-        ans = i;
+        pos = i;
     }
 }
 
-cout << ans; // 重心
+cout << pos; // 重心位置
 ```
