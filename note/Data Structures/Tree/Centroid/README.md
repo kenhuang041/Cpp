@@ -1,5 +1,6 @@
 # 樹重心
 我學到的方法，是透過節點的滲度來求樹重心
+用dfs的方式求得樹中節點的滲度，再取滲度最小的即是重心
 
 ### 結構 & 原理
 定義節點u的滲度為「移除節點u後，形成的若干棵子樹中節點數量中的最大值」<br>
@@ -24,11 +25,11 @@
 ```cpp
 vector<int> tree[N];
 int cost[N];
-int nt;
+int nt; // 節點數
 
 // 建立各節點滲度
 int dfs(int u,int parent) {
-    int t = 1,r = 0; // t 子樹大小,  r 子節點返回值
+    int t = 1,r = 0; // t:子樹大小總和  r:子節點的子樹大小
     for(auto i : tree[u]) {
         if(i == parent) continue;
 	r = dfs(i,u); // 單個子樹節點大小
