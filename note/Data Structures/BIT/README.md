@@ -99,3 +99,70 @@ void modify(int x,int k) {
   add(x,k-a[x])
 }
 ```
+
+---
+
+## 更新
+也可以用 struct 封裝 BIT，會更簡潔一點 <br>
+不一定要用 build() ，可以在輸入 a[] 時 用 add(i,a[i]) 建樹
+
+``` cpp
+#include <bits/stdc++.h>
+using namespace std;
+#define IO ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define int long long
+#define N 10005
+
+struct BIT {
+	vector<int> bt,a;
+	int sz;
+	
+	void init(int n) {
+		sz = n;
+		a.assign(n+1,0);
+		bt.assign(n+1,0);
+	}
+	
+	void add(int x,int k) {
+		a[x] += k;
+		for(int i=x; i<=sz; i += (i&-i)) {
+			bt[i] += k;
+		}
+	}
+	
+	void modify(int x,int k) {
+		int d = k - a[x];
+		add(x,d);
+	}
+	
+	int find(int x) {
+		int sum = 0;
+		for(int i=x; i>0; i -= (i&-i)) {
+			sum += bt[i];
+		}
+		return sum;
+	}
+	
+	int query(int l,int r) {
+		return find(r) - find(l-1);
+	}
+};
+
+signed main() {
+    IO;
+    BIT bit;
+    int n;
+    cin >> n;
+    
+    bit.init(n);
+    for(int i=1; i<=n; i++) {
+    	cin >> bit.a[i];
+    	bit.add(i,bit.a[i]);
+	}
+	
+	cout << bit.find(3);
+	cout << "\n" << bit.query(2,4);
+    //0x3F 
+}
+
+```
