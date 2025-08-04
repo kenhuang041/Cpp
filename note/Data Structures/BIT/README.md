@@ -20,7 +20,7 @@
 用陣列實現的話，結構如圖所示
 ()
 
-問題來了，應該怎樣將指定數加到對應格?
+問題來了，應該怎樣將指定數加到對應格?    
 答案是用lowbit(n)
 lowbit(n) 是將n轉二進制，取由右邊往前數到的第一個1的值 <br>
 
@@ -114,38 +114,38 @@ using namespace std;
 #define N 10005
 
 struct BIT {
-	vector<int> bt,a;
-	int sz;
+    vector<int> bt,a;
+    int sz;
 	
-	void init(int n) {
-		sz = n;
-		a.assign(n+1,0);
-		bt.assign(n+1,0);
-	}
+    void init(int n) {
+	sz = n;
+	a.assign(n+1,0);
+	bt.assign(n+1,0);
+    }
 	
-	void add(int x,int k) {
-		a[x] += k;
-		for(int i=x; i<=sz; i += (i&-i)) {
-			bt[i] += k;
-		}
+    void add(int x,int k) {
+	a[x] += k;
+	for(int i=x; i<=sz; i += (i&-i)) {
+	    bt[i] += k;
 	}
+    }
 	
-	void modify(int x,int k) {
-		int d = k - a[x];
-		add(x,d);
-	}
+    void modify(int x,int k) {
+	int d = k - a[x];
+	add(x,d);
+    }
 	
-	int find(int x) {
-		int sum = 0;
-		for(int i=x; i>0; i -= (i&-i)) {
-			sum += bt[i];
-		}
-		return sum;
+    int find(int x) {
+	int sum = 0;
+	for(int i=x; i>0; i -= (i&-i)) {
+	    sum += bt[i];
 	}
+	return sum;
+    }
 	
-	int query(int l,int r) {
-		return find(r) - find(l-1);
-	}
+    int query(int l,int r) {
+	return find(r) - find(l-1);
+    }
 };
 
 signed main() {
