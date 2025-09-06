@@ -33,13 +33,13 @@ int depth[N];
 void dfs(int u,int p) {
     up[u][0] = p;
     for(int i=1; i<LOG; i++) {
-	up[u][i] = up[up[u][i-1]][i-1];
+		up[u][i] = up[up[u][i-1]][i-1];
     }	
     for(auto v : tree[u]) {
-	if(v != p) {
-	    depth[v] = depth[u]+1;
-	    dfs(v,u);
-	}
+		if(v != p) {
+		    depth[v] = depth[u]+1;
+		    dfs(v,u);
+		}
     }
 }
 ```
@@ -54,19 +54,19 @@ void dfs(int u,int p) {
 int query(int u,int v) {
     if(depth[u] < depth[v]) swap(u,v); // 默認 節點u 高度 >= 節點v
     for(int i=LOG-1; i>=0; i--) { // 移動至相同高度
-	if(depth[u] - (1 << i) >= depth[v]) { // depth[u] - 2^i >=  depth[v]
-	    u = up[u][i]; //向上移動
-	}
+		if(depth[u] - (1 << i) >= depth[v]) { // depth[u] - 2^i >=  depth[v]
+		    u = up[u][i]; //向上移動
+		}
     }
 	
     if(u == v) return u; // 相同高度時節點已相同 直接回傳
 	
     for(int i=LOG-1; i>=0; i--) { // 向上移動
-	//向上跳 2^i 步會不會「越過」LCA？
-	if(up[u][i] != up[v][i]) { // 不會越過
-	    u = up[u][i]; // 向上移動
-	    v = up[v][i];
-	}
+		//向上跳 2^i 步會不會「越過」LCA？
+		if(up[u][i] != up[v][i]) { // 不會越過
+		    u = up[u][i]; // 向上移動
+		    v = up[v][i];
+		}
     } 
 	
     return up[u][0]; // 回傳結果
