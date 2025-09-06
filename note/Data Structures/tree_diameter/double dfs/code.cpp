@@ -9,12 +9,12 @@ int mx = -1,mx_node;
 
 void dfs(int u,int parent,int t) {
     for(auto v : tree[u]) {
-	if(v == parent) continue;
-	dfs(v,u,t+1);
-    }	
-    if(t > mx) {
-	mx_node = u;
-	mx = t;
+		if(v == parent) continue;
+		dfs(v,u,t+1);
+	}	
+	if(t > mx) {
+	    mx_node = u;
+		mx = t;
     }
 }
 
@@ -24,9 +24,9 @@ signed main() {
     cin >> n;
 	
     for(int i=0,a,b; i<n-1; i++) {
-	cin >> a >> b;
-	tree[a].push_back(b);
-	tree[b].push_back(a);
+		cin >> a >> b;
+		tree[a].push_back(b);
+		tree[b].push_back(a);
     }
 	
     dfs(0,-1,0);
