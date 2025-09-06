@@ -28,8 +28,8 @@ void dijkstra(int start) {
 	for(auto v : G[u.F]) {
 	    //cout << dist[u.F] + v.S << " " << dist[v.F] << " | ";
 	    if(dist[u.F] + v.S < dist[v.F]) {
-		dist[v.F] = dist[u.F] + v.S;
-		pq.push({v.F,dist[v.F]});
+			dist[v.F] = dist[u.F] + v.S;
+			pq.push({v.F,dist[v.F]});
 	    }
 	}
     }
@@ -39,8 +39,8 @@ signed main() {
     IO;
     int n,a,b,w;
     while(cin >> a >> b >> w) {
-	G[a].push_back({b,w});
-	G[b].push_back({a,w});
+		G[a].push_back({b,w});
+		G[b].push_back({a,w});
     }
 	
     dijkstra(1);
