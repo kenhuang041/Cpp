@@ -32,9 +32,9 @@ int dfs(int u,int parent) {
     int t = 1,r = 0; // t:子樹大小總和  r:子節點的子樹大小
     for(auto i : tree[u]) {
         if(i == parent) continue;
-	r = dfs(i,u); // 單個子樹節點大小
-	t += r; // 累加
-	cost[u] = max(cost[u],r); // 更新最大子樹大小
+		r = dfs(i,u); // 單個子樹節點大小
+		t += r; // 累加
+		cost[u] = max(cost[u],r); // 更新最大子樹大小
     }
 	
     cost[u] = max(cost[u],nt-t); // 考慮上方部分（父節點方向）
