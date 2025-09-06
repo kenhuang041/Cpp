@@ -28,17 +28,17 @@ void dfs(int u,int parent) { // 當前節點,父節點
     int max1 = 0,max2 = 0; //最大 次大
 	
     for(auto v : tree[u]) { // 遍歷節點u的每個子節點v
-	if(v == parent) continue; // 不能往父節點走
-	dfs(v,u);
-		
-	int d = dp[v]+1; // 節點u到節點v的距離記得算 所以要+1 
-	if(d > max1) { // 更新max1
-	    max2 = max1; // 原先max1變成max2
-    	    max1 = d; 
-	}
-	else if(d > max2) { // max1 > d > max2 則更新max2
-	    max2 = d;
-	}
+		if(v == parent) continue; // 不能往父節點走
+		dfs(v,u);
+			
+		int d = dp[v]+1; // 節點u到節點v的距離記得算 所以要+1 
+		if(d > max1) { // 更新max1
+		    max2 = max1; // 原先max1變成max2
+	    	    max1 = d; 
+		}
+		else if(d > max2) { // max1 > d > max2 則更新max2
+		    max2 = d;
+		}
     }
 	
     dp[u] = max1; // 設置當前節點向下最大距離 也就是max1
