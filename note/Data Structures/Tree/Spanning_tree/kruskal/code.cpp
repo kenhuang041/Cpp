@@ -1,10 +1,10 @@
-// kruskal
+// kruskal 取得最小生成數（MST）
 #include<bits/stdc++.h>
 using namespace std;
 #define IO ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define int long long
 #define N 1005
-struct edge {
+struct edge { //a到b 
     int a,b,w;
 };
 
