@@ -4,7 +4,7 @@ using namespace std;
 #define IO ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define int long long
 #define N 1005
-struct edge { //a到b 
+struct edge { //a到b w是權重
     int a,b,w;
 };
 
