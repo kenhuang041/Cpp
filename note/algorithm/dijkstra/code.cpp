@@ -20,18 +20,18 @@ void dijkstra(int start) {
     pq.push({start,0});
 	
     while(pq.size() > 0) {
-	pii u = pq.top();
-	pq.pop();
-		
-	if(dist[u.F] < u.S) continue;
-	cout << u.F << endl;
-	for(auto v : G[u.F]) {
-	    //cout << dist[u.F] + v.S << " " << dist[v.F] << " | ";
-	    if(dist[u.F] + v.S < dist[v.F]) {
-			dist[v.F] = dist[u.F] + v.S;
-			pq.push({v.F,dist[v.F]});
-	    }
-	}
+		pii u = pq.top();
+		pq.pop();
+			
+		if(dist[u.F] < u.S) continue;
+		cout << u.F << endl;
+		for(auto v : G[u.F]) {
+		    //cout << dist[u.F] + v.S << " " << dist[v.F] << " | ";
+		    if(dist[u.F] + v.S < dist[v.F]) {
+				dist[v.F] = dist[u.F] + v.S;
+				pq.push({v.F,dist[v.F]});
+		    }
+		}
     }
 }
 
