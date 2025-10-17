@@ -2,10 +2,10 @@
 目的是快速判斷字串s中是否包含字串t，範例如下 
 
 $$ 
-\begin{aligned}
-\[s = abbadca] \\
-\[t = dca]
-\end{aligned}
+\begin{center}
+s = abbadca \\
+t = dca
+\end{center}
 $$
 
 ### 優點
