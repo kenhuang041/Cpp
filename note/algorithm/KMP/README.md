@@ -3,8 +3,8 @@
 
 $$ 
 \begin{aligned}
-\[s = abbadca\] \\
-\[t = dca \]
+\[s = abbadca] \\
+\[t = dca]
 \end{aligned}
 $$
 
