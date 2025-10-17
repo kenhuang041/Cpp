@@ -2,12 +2,12 @@
 目的是快速判斷字串s中是否包含字串t，範例如下 
 
 $$
-\[
+\
 \begin{flalign*}
 s &= abbadca &\\
 t &= dca &
 \end{flalign*}
-\]
+\
 $$
 
 ### 優點
