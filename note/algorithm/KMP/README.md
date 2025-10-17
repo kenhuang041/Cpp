@@ -1,13 +1,14 @@
 # KMP
 目的是快速判斷字串s中是否包含字串t，範例如下 
 
+<p align="left">
 $$ 
 \begin{aligned}
 s = abbadca \\
 t = dca
 \end{aligned}
 $$
-
+</p>
 
 ### 優點
 如果是暴力解的話，複雜度是Ｏ(s.size() * t.size()) <br>
