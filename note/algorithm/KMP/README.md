@@ -2,14 +2,13 @@
 目的是快速判斷字串s中是否包含字串t，範例如下 
 
 $$
-\begin{flushleft}
 \[
-\begin{aligned}
-s &= abbadca \\
-t &= dca
-\end{aligned}
+\begin{flalign*}
+s &= abbadca &\\
+t &= dca &
+\end{flalign*}
 \]
-\end{flushleft}
+
 $$
 
 ### 優點
