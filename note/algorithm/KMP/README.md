@@ -8,7 +8,6 @@ s &= abbadca &\\
 t &= dca &
 \end{flalign*}
 \]
-
 $$
 
 ### 優點
