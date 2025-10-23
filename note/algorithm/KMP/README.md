@@ -62,11 +62,30 @@ $$
 <!--（依照匹配結果看，直接以後綴為起點匹配也沒有問題）
 - （所以直接移就對了^^）-->
 
+``` cpp
+// 建立 Failure Function
+vector<int> build(string &t) {
+    vector<int> F(t.size());
+    F[0] = -1;
+    for (int i = 1, pos = -1; i < t.size(); i++) {
+        while (~pos && t[i] != t[pos + 1])
+            pos = F[pos];
+        if (t[i] == t[pos + 1])
+            pos++;
+        F[i] = pos;
+    }
+
+    return F;
+}
+```
+
+<!--
 string s = "abababac";
 string t = "ababac";
+-->
 
 失配表建立完成後，則可正式開始配對
-- 從最前面開始比對，如果失配，則直接跳到能繼續匹配的長度
+- 從最前面開始向前比對，如果失配，則依照失配表跳到下個比對位置
 - pos = 目前已匹配成功字串的最後一個索引 (若 "abc" 匹配成功, 則 pos=2)
 - 
 $$
@@ -79,3 +98,28 @@ s[i] &= b, t[pos+1] = c, then pos = F[pos] = 2 & \\
 \end{flalign*}
 \
 $$
+
+``` cpp
+vector<int> kmp_search(string &s, string &t) {  
+    vector<int> F = build(t); // 建立LPS
+    vector<int> res;
+    int pos = -1; // 代表上一次成功比到哪個索引，所以使用時要 + 1 
+    
+    for (int i=0; i<s.size(); i++) {
+    	// ~pos => pos != -1
+        while (~pos && s[i] != t[pos + 1]) // 配對失敗時，回到 t 的最長相等前後綴的最後一個索引
+            pos = F[pos];
+        
+        if (s[i] == t[pos + 1]) // 配對成功，pos移動至下個配對點 
+            pos++;
+            
+        if (pos + 1 == t.size()) { // 比對成功 
+            res.push_back(i - pos);
+            pos = F[pos];
+        }
+    }
+    
+    return res;
+}
+```
+
