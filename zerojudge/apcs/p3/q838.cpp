@@ -16,12 +16,12 @@ signed main() {
     vector<int> v(n+5),pre(n+5),nxt(n+5);
 	
     for(int i=0; i<n; i++) {
-	cin >> v[i];
-	pq.push({v[i],i});
+		cin >> v[i];
+		pq.push({v[i],i});
     }
     for(int i=1; i<=n; i++) { // 鏈結左右子點 
-	pre[i] = i-1;
-	nxt[i-1] = i;
+		pre[i] = i-1;
+		nxt[i-1] = i;
     }
 	
     now = n;
