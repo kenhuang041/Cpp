@@ -10,17 +10,17 @@ int n;
 void dfs(string ns,int now) {
     if(ns.size() >= n) {
         if(st.count(ns) <= 0) { 
-	    // string的find 最壞 O(s.size() * fs.size()) 
-	    // set的find/count 最壞O(logN) -> N是set大小 
-	    // unordered_set 只要O(1)
-	    cout << ns;
-	    exit(0);
-	}
+		    // string的find 最壞 O(s.size() * fs.size()) 
+		    // set的find/count 最壞O(logN) -> N是set大小 
+		    // unordered_set 只要O(1)
+		    cout << ns;
+		    exit(0);
+		}
     }
     else {
-	for(int i=0; i<s.size(); i++) {
-	    dfs(ns+s[i],++now);
-	} 
+		for(int i=0; i<s.size(); i++) {
+		    dfs(ns+s[i],++now);
+		} 
     }
 }
 
