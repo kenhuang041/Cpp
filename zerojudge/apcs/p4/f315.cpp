@@ -15,8 +15,8 @@ int a[N],tree[4*N],n,ans = 0;
 
 void build(int l,int r,int node) {
     if(l == r) {
-	tree[node] = a[l];
-	return;
+		tree[node] = a[l];
+		return;
     }
 	
     int mid = (l+r)/2;
@@ -35,8 +35,8 @@ int query(int l,int r,int ql,int qr,int node) { //查詢區間不變
 
 void modify(int l,int r,int node,pii val) {
     if(l == r) {
-	tree[node] = val.F;
-	return;
+		tree[node] = val.F;
+		return;
     }
 	
     int mid = (l+r) / 2;
@@ -52,22 +52,22 @@ signed main() {
     for(int i = 0; i < 2*n; i++) {
         int tmp;
         cin >> tmp;
-	v.push_back({tmp, i});
+		v.push_back({tmp, i});
     }
     sort(v.begin(), v.end());
     build(0, 2*n-1, 0);
 	
     for(int i=0; i<v.size(); i+=2) {
-	int l = v[i].S,r = v[i+1].S;
-	if(l > r) swap(l, r);
-		
-	if(l + 1 <= r - 1) {
-            int count = query(0, 2*n-1, l+1, r-1, 0);
-            ans += count;
-        }
-		
-	modify(0,2*n-1,0,{1,l});
-	modify(0,2*n-1,0,{1,r});	
+		int l = v[i].S,r = v[i+1].S;
+		if(l > r) swap(l, r);
+			
+		if(l + 1 <= r - 1) {
+	        int count = query(0, 2*n-1, l+1, r-1, 0);
+	        ans += count;
+	    }
+			
+		modify(0,2*n-1,0,{1,l});
+		modify(0,2*n-1,0,{1,r});	
     }
 	
     cout << ans;
