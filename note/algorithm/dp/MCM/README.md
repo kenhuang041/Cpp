@@ -3,10 +3,13 @@
 其中兩個矩陣相乘後都會得到一個新的矩陣 (cost 是矩陣相乘時，矩陣內部項相乘次數):
 
 $$
-A_{1} = \begin{bmatrix}15,10\end{bmatrix}, A_{2} = \begin{bmatrix}10,20\end{bmatrix} &\\
-A_{1} \times A_{2} = \begin{bmatrix}15,20\end{bmatrix} &\\
+\begin{flalign*}
+A_{1} = [15,10], A_{2} = [10,20] &\\
+A_{1} \times A_{2} = [15,20] &\\
 cost = 15 \times 10 \times 20
+\end{flalign*}
 $$
+
 
 問題是: **將矩陣陣列內所有矩陣相乘，要怎樣才能求得最小的乘法次數 (也就是最小csot)**
 
