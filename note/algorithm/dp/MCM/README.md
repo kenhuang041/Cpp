@@ -3,8 +3,8 @@
 其中兩個矩陣相乘後都會得到一個新的矩陣 (cost 是矩陣相乘時，矩陣內部項相乘次數):
 
 $$
-A_{1} = \begin{bmatrix}15,10\end{bmatrix}, A_{2} = \begin{bmatrix}10,20\end{bmatrix} \\
-A_{1} \times A_{2} = \begin{bmatrix}15,20\end{bmatrix} \\
+A_{1} = \begin{bmatrix}15,10\end{bmatrix}, A_{2} = \begin{bmatrix}10,20\end{bmatrix} &\\
+A_{1} \times A_{2} = \begin{bmatrix}15,20\end{bmatrix} &\\
 cost = 15 \times 10 \times 20
 $$
 
