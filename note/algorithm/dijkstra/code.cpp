@@ -23,11 +23,9 @@ void dijkstra(int start) {
 		pii u = pq.top();
 		pq.pop();
 			
-		if(dist[u.F] < u.S) continue;
-		cout << u.F << endl;
+		if(dist[u.F] < u.S) continue; // 忽略舊距離
 		for(auto v : G[u.F]) {
-		    //cout << dist[u.F] + v.S << " " << dist[v.F] << " | ";
-		    if(dist[u.F] + v.S < dist[v.F]) {
+		    if(dist[u.F] + v.S < dist[v.F]) { // 新距離 < 舊距離
 				dist[v.F] = dist[u.F] + v.S;
 				pq.push({v.F,dist[v.F]});
 		    }
