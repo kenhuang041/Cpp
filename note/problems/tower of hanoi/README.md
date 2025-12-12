@@ -41,3 +41,8 @@ signed main() {
     return 0;
 }
 ```
+
+<br>
+
+### 題目
+https://cses.fi/problemset/task/2165
