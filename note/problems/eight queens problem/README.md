@@ -59,4 +59,9 @@ signed main() {
 }
 ```
 
-可以執行看看，一共有92種解 :)
+可以執行看看，一共有92種解 :) <br>
+<br>
+
+### 題目
+https://zerojudge.tw/ShowProblem?problemid=a160
+https://cses.fi/problemset/task/1624
