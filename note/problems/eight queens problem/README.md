@@ -33,6 +33,9 @@ int col[N], rc[N*2], cr[N*2];
 int put[N][N];
 int n = 8, t=0;
 
+// row - cl 的範圍是 -7~7，所以要+7避免負數
+// row + cl 就不用+7了，因為範圍是 0~14
+
 void solve(int row) {
     if(row==n) {
         t++;
