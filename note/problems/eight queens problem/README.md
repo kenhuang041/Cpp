@@ -63,5 +63,5 @@ signed main() {
 <br>
 
 ### 題目
-https://zerojudge.tw/ShowProblem?problemid=a160
+https://zerojudge.tw/ShowProblem?problemid=a160 <br>
 https://cses.fi/problemset/task/1624
