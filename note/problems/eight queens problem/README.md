@@ -29,7 +29,7 @@ using namespace std;
 #define F first
 #define S second
 #define N 10
-int col[N], rc[N*2], cr[N*2]; 
+int col[N], rc[N*2], cr[N*2]; // 正對角線跟負對角線有15條 所以要用N*2
 int put[N][N];
 int n = 8, t=0;
 
