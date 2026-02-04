@@ -1,27 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
+#define IO ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+const int MOD = 1e9 + 7;
 
-int main()
-{
-    int n;
-    cin >> n;
-    int arr[n+1][9] = {0},a[n+1],b[n+1]; //9是題目指定的背包容量8再加上1
+signed main() {
+	int x,t = 0;
+	cin >> x;
+	t = (x*(x+1))/2;
+	if(t%2 == 1) {
+		cout << "0\n";
+		return 0;
+	}
 	
-    for(int i=0; i<n; i++){
-        cin >> a[i] >> b[i];
-    }
+	vector<int> dp(t+1, 0);
+	dp[0] = 1;
+	for(int i=1; i<x; i++) {
+		for(int j=t/2; j>=i; j--) {
+			dp[j] = (dp[j] + dp[j-i]) % MOD;
+		}
+	}
 	
-    for(int i=1; i<=n; i++){
-        for(int j=0; j<9; j++){ 
-            if(j-a[i-1] < 0){
-                arr[i][j] = arr[i-1][j];
-            }
-            else{
-                arr[i][j] = max(arr[i-1][j],arr[i-1][j-a[i-1]]+b[i-1]);
-            }
-        }
-    }
-	
-    cout << arr[n][8];
-    return 0;
+	cout << dp[t/2];
+	return 0;
 }
+ 
