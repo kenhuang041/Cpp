@@ -25,16 +25,16 @@
   - 基數區間由大到小
 
 
-int block_size; // k
-struct Query { 
-    int l,r,idx; // 左界, 右界, 原始索引
-    bool operator<(const Query& other) const { // 複寫排序規則
-        int b1 = l / block_size; // 左界的區塊編號
-        int b2 = other.l / block_size; // 另一個查詢項的左界區塊編號
-        
-        if(b1 != b2) return b1 < b2; // 由小到大排序
-        // 同一區塊內，根據右界排序，偶數區塊由小到大，奇數區塊由大到小
-        // 可以減少指針移動距離，提升效率
-        else return (b1 & 1) ? (r < other.r) : (r > other.r);
-    }
-};
+          int block_size; // k
+          struct Query { 
+              int l,r,idx; // 左界, 右界, 原始索引
+              bool operator<(const Query& other) const { // 複寫排序規則
+                  int b1 = l / block_size; // 左界的區塊編號
+                  int b2 = other.l / block_size; // 另一個查詢項的左界區塊編號
+                  
+                  if(b1 != b2) return b1 < b2; // 由小到大排序
+                  // 同一區塊內，根據右界排序，偶數區塊由小到大，奇數區塊由大到小
+                  // 可以減少指針移動距離，提升效率
+                  else return (b1 & 1) ? (r < other.r) : (r > other.r);
+              }
+          };
